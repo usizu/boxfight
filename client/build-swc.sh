@@ -12,6 +12,7 @@ swc compile ../src/game.ts --out-file game.js
 
 # 5. Copy files from src to build
 cp ../src/index.html index.html
+cp ../src/styles.css styles.css
 # cp ../src/game.js game.js # Uncomment if needed in the future
 cp ../src/samjs.min.js samjs.min.js
 cp ../src/riffwave.js riffwave.js
