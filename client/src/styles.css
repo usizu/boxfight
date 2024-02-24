@@ -15,12 +15,18 @@ body {
 }
 
 div#app {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 3em;
-  row-gap: 3em;
+  justify-content: space-evenly;
+  column-gap: 1em;
+  row-gap: 1em;
+
+  padding: 1em;
+  
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 4em);
+  max-height: 600px;
 }
 
 canvas { 
@@ -28,30 +34,53 @@ canvas {
   background-color: black;
 }
 
+div#chat {
+  flex-grow: 1;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  min-height: 180px;
+}
+
 /* Chat */
 p#output {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   row-gap: 1em;
+  column-gap: 1em;
+
+  max-width: 340px;
+  width: 100%;
 }
 
 textarea#chat_log {
   resize: none;
   height: 100%;
-  width: 100%;
-  display: inline-block;
-  min-height: 500px;
 }
 
 textarea#chat_log,
 input#chat_input {
+  display: inline-block;
   border: 2px solid gray;
   padding: 6px;
   font-family: sans-serif;
   border-radius: 8px;
+  flex-basis: 210px;
+  flex-grow: 1;
+  width: 100%;
 }
 
 input#chat_input {
-  width: 100%;
+  max-height: 3em;
+}
+
+@media(max-width: 1180px) {
+  p#output {
+    max-width: 800px;
+    width: 100%;
+  }
 }
